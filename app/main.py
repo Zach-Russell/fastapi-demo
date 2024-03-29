@@ -53,9 +53,9 @@ def get_one_album(id):
 
 
 
-# @app.post("/items/{item_id}")
-# def add_item(item_id: int, item: Item):
-#     return {"item_id": item_id, "item_name": item.name}
+@app.post("/items/{item_id}")
+def add_item(item_id: int, item: Item):
+    return {"item_id": item_id, "item_name": item.name}
 
 # @app.delete("/items/{item_id}")
 # def delete_item(item_id: int, item: Item):
