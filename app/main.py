@@ -1,22 +1,27 @@
 #!/usr/bin/env python3
 
+import os
+import MySQLdb
+from fastapi.staticfiles import StaticFiles
+
 from fastapi import FastAPI
 from typing import Optional
 from pydantic import BaseModel
 from models import Item, Album
 import json
-import os
-import MySQLdb
-from fastapi.staticfiles import StaticFiles
+# import os
+# import MySQLdb
+# from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static", html = True), name="static")
 
-# db config stuff
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
+
 DBHOST = os.environ.get('DBHOST')
 DBUSER = os.environ.get('DBUSER')
 DBPASS = os.environ.get('DBPASS')
-DB = "nem2p"
+DB = "zhr8wex"  # replace with your UVA computing ID / database name
 
 @app.get("/")  # zone apex
 def zone_apex():
