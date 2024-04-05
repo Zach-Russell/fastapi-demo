@@ -52,9 +52,9 @@ def get_one_album(id):
 
 
 
-# @app.post("/albums")
-# def add_an_album(album: Album):
-#     return {"name": album.name, "artist":album.artist, "genre": album.genre, "year":album.year}
+@app.post("/albums")
+def add_an_album(album: Album):
+    return {"name": album.name, "artist":album.artist, "genre": album.genre, "year":album.year}
 
 
 
